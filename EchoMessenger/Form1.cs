@@ -16,7 +16,7 @@ namespace EchoMessenger
 
             string typed_msg = myTextBox.Text;
             myListBox.Items.Add(typed_msg);
-            myTextBox.Clear();
+            myTextBox.Clear(); //text
             myTextBox.Focus();
         }
 
