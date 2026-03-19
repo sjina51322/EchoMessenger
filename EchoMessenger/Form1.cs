@@ -9,15 +9,29 @@ namespace EchoMessenger
             InitializeComponent();
         }
 
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (myListBox.SelectedIndex != -1)
+            {
+                myListBox.Items.RemoveAt(myListBox.SelectedIndex);
+            }
+        }
+
+
         private void sendButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
                 return;
 
+            if (myTextBox.Text.Length > 50)
+            {
+                MessageBox.Show("50자 이하로 입력하세요");
+                return;
+            }
+
             string msg = myTextBox.Text.Trim();
-
             string time = DateTime.Now.ToString("HH:mm:ss");
-
             string result = $"[{time}] {msg}";
 
             myListBox.Items.Add(result);
@@ -49,6 +63,11 @@ namespace EchoMessenger
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            myListBox.Items.Clear();
         }
     }
 }

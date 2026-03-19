@@ -36,6 +36,8 @@
             sendButton = new Button();
             myListBox = new ListBox();
             countLabel = new Label();
+            deleteButton = new Button();
+            clearButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -105,18 +107,38 @@
             // countLabel
             // 
             countLabel.AutoSize = true;
-            countLabel.Location = new Point(517, 263);
+            countLabel.Location = new Point(181, 201);
             countLabel.Name = "countLabel";
             countLabel.Size = new Size(39, 15);
             countLabel.TabIndex = 7;
             countLabel.Text = "label5";
             countLabel.Click += label5_Click;
             // 
+            // deleteButton
+            // 
+            deleteButton.Location = new Point(431, 221);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(75, 23);
+            deleteButton.TabIndex = 8;
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
+            // clearButton
+            // 
+            clearButton.Location = new Point(534, 221);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(75, 23);
+            clearButton.TabIndex = 9;
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(clearButton);
+            Controls.Add(deleteButton);
             Controls.Add(countLabel);
             Controls.Add(myListBox);
             Controls.Add(sendButton);
@@ -141,5 +163,7 @@
         private Button sendButton;
         private ListBox myListBox;
         private Label countLabel;
+        private Button deleteButton;
+        private Button clearButton;
     }
 }
