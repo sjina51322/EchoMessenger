@@ -35,6 +35,7 @@
             myTextBox = new TextBox();
             sendButton = new Button();
             myListBox = new ListBox();
+            countLabel = new Label();
             SuspendLayout();
             // 
             // label1
@@ -101,11 +102,22 @@
             myListBox.TabIndex = 6;
             myListBox.SelectedIndexChanged += myListBox_SelectedIndexChanged;
             // 
+            // countLabel
+            // 
+            countLabel.AutoSize = true;
+            countLabel.Location = new Point(517, 263);
+            countLabel.Name = "countLabel";
+            countLabel.Size = new Size(39, 15);
+            countLabel.TabIndex = 7;
+            countLabel.Text = "label5";
+            countLabel.Click += label5_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(countLabel);
             Controls.Add(myListBox);
             Controls.Add(sendButton);
             Controls.Add(myTextBox);
@@ -128,5 +140,6 @@
         private TextBox myTextBox;
         private Button sendButton;
         private ListBox myListBox;
+        private Label countLabel;
     }
 }

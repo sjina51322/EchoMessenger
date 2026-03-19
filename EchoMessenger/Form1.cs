@@ -14,9 +14,17 @@ namespace EchoMessenger
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
                 return;
 
-            string typed_msg = myTextBox.Text;
-            myListBox.Items.Add(typed_msg);
-            myTextBox.Clear(); //text
+            string msg = myTextBox.Text.Trim();
+
+            string time = DateTime.Now.ToString("HH:mm:ss");
+
+            string result = $"[{time}] {msg}";
+
+            myListBox.Items.Add(result);
+
+            countLabel.Text = $"현재 대화: {myListBox.Items.Count}개";
+
+            myTextBox.Clear();
             myTextBox.Focus();
         }
 
@@ -34,6 +42,11 @@ namespace EchoMessenger
         }
 
         private void myTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
